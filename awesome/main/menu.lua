@@ -12,8 +12,8 @@ local _M = {} -- module
 
 local terminal = RC.vars.terminal
 
-local editor = os.getenv(EDITOR") or "nano
-local editor_cmd = terminal .. " -e " .. editor
+local editor = os.getenv("EDITOR") or "nano"
+local editor_cmd = terminal .. "-e " .. editor
 
 
 -- Adding a Metatable
@@ -29,7 +29,7 @@ M.awesome = {
    { "quit", function() awesome.quit() end },
 }
 	
-	}
+	
 
 	
 	
@@ -47,5 +47,5 @@ end
 
 return setmetatable(
 	{},
-	{ _Call = function(_, ...) return _M.get(...) end }
+	{ __call = function(_, ...) return _M.get(...) end }
 	)
