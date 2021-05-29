@@ -28,9 +28,10 @@ function _M.get ()
                                           end),
                      awful.button({ }, 5, function ()
                                               awful.client.focus.byidx(-1)
-                                          end))
+                                          end)
+)
 		
-	
+--------------------------------	
 
 	return tasklist_buttons
 end

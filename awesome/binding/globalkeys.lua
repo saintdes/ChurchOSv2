@@ -21,6 +21,7 @@ function _M.get ()
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     
+    
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
@@ -43,6 +44,8 @@ function _M.get ()
     awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
               {description = "show main menu", group = "awesome"}),
 
+    -------------------------------
+    
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
               {description = "swap with next client by index", group = "client"}),
@@ -63,6 +66,9 @@ function _M.get ()
         end,
         {description = "go back", group = "client"}),
 
+    
+    -------------------------------
+    
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
@@ -100,8 +106,10 @@ function _M.get ()
               end,
               {description = "restore minimized", group = "client"}),
 
+    -------------------------------
+    
     -- Prompt
-    awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
+    awful.key({ modkey }, "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
     awful.key({ modkey }, "x",
@@ -114,6 +122,8 @@ function _M.get ()
                   }
               end,
               {description = "lua execute prompt", group = "awesome"}),
+    
+    
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"})

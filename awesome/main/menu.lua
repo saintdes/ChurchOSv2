@@ -29,7 +29,11 @@ M.awesome = {
    { "quit", function() awesome.quit() end },
 }
 	
-	
+M.favorite = {
+  { "nano", "nano" },
+  { "firefox", "firefox" },
+
+}	
 
 	
 	

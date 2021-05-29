@@ -10,7 +10,7 @@ local modkey = RC.vars.modkey
 
 
 function _M.get ()
-	  local clientbuttons = gears.table.join(
+  local clientbuttons = gears.table.join(
         awful.button({ }, 1, function (c)
             c:emit_signal("request::activate", "mouse_click", {raise = true})
     end),

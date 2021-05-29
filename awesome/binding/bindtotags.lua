@@ -4,7 +4,7 @@ local awful = require("awful")
 
 -- Adding a Metatable
 local _M = {}
-local modkey = RC.vars.mod
+local modkey = RC.vars.modkey
 
 -----------------------------
 
@@ -12,7 +12,9 @@ function _M.get (globalkeys)
 	
 for i = 1, 9 do
     globalkeys = gears.table.join(globalkeys,
-			
+            
+	
+      ------------------------------------------
         -- View tag only.
         awful.key({ modkey }, "#" .. i + 9,
                   function ()
@@ -23,6 +25,9 @@ for i = 1, 9 do
                         end
                   end,
                   {description = "view tag #"..i, group = "tag"}),
+            
+      
+      ------------------------------------------
         -- Toggle tag display.
         awful.key({ modkey, "Control" }, "#" .. i + 9,
                   function ()
@@ -33,6 +38,7 @@ for i = 1, 9 do
                       end
                   end,
                   {description = "toggle tag #" .. i, group = "tag"}),
+            
         -- Move client to tag.
         awful.key({ modkey, "Shift" }, "#" .. i + 9,
                   function ()
@@ -41,9 +47,11 @@ for i = 1, 9 do
                           if tag then
                               client.focus:move_to_tag(tag)
                           end
-                     end
+                     end 
                   end,
                   {description = "move focused client to tag #"..i, group = "tag"}),
+            
+            
         -- Toggle tag on focused client.
         awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
                   function ()
@@ -56,7 +64,7 @@ for i = 1, 9 do
                   end,
                   {description = "toggle focused client on tag #" .. i, group = "tag"})
     )
-end
+  end
 
 	return globalkeys
 end
