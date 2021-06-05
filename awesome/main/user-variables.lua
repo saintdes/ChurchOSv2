@@ -8,7 +8,7 @@ terminal = "alacritty",
 
 modkey = "Mod4",
 
-wallpaper = "~/.config/awesome/Pictures/Solid_Aqua_Graphite.png",
+wallpaper = "/home/edgar/.config/awesome/Pictures/LightBulb.jpg",
 
 }
 
